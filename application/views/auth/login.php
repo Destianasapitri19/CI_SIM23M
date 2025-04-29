@@ -26,7 +26,7 @@
       <?php if ($this->session->flashdata('error')):?>
         <p style="color:red;"><?= $this->session->flashdata('error');?></p>
         <?php endif;?>
-      <form action="../../index3.html" method="post">
+      <form action="<?= site_url('auth/process_login')?>" method="post">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
