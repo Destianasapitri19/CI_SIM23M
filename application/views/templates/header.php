@@ -230,7 +230,9 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <?php $level = $this->session->userdata('role'); ?>
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+          <li class="nav-item has-treeview">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
@@ -242,19 +244,31 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <?php if($level =='admin'|| $level == 'user') : ?>
               <li class="nav-item">
               <a href="<?= base_url('berita'); ?>"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Berita</p>
                 </a>
               </li>
+              <?php endif; ?>
+
+              <?php if ($level == 'admin'): ?>
               <li class="nav-item">
               <a href="<?= base_url('kategori'); ?>"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori</p>
                 </a>
               </li>
+              <?php endif; ?>
               <li class="nav-item">
+									<a href="<?= base_url('auth/logout'); ?>" class="nav-link">
+										<i class="nav-icon fas fa-sign-out-alt"></i>
+										<p>Logout</p>
+									</a>
+								</li>
+
+              <!-- <li class="nav-item">
                 <a href="../../index3.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
@@ -864,7 +878,7 @@
               <p>Informational</p>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </nav>
       <!-- /.sidebar-menu -->
     </div>

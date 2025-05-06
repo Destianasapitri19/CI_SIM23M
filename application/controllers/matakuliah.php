@@ -77,7 +77,7 @@ class Matakuliah extends CI_Controller {
     }
 
     public function update($kode_matakuliah){
-        $this->form_validation->set_rules('kode_matakuliah', 'Kode Matakuliah', 'required');
+        $this->form_validation->set_rules('kode_matakuliah', 'Kode Matakuliah', 'required');    
         $this->form_validation->set_rules('nama_matakuliah', 'Nama Matakuliah', 'required');
         $this->form_validation->set_rules('sks', 'SKS', 'required|numeric');
         $this->form_validation->set_rules('semester', 'Semester', 'required|numeric');
