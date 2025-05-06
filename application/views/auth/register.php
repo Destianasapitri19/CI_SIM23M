@@ -27,7 +27,7 @@
                 <?php if ($this->session->flashdata('success')): ?>
                     <p style="color:green;"><?= $this->session->flashdata('success'); ?></p>
                 <?php endif; ?>
-                <?php if ($this->session->flashdata('error')): ?>
+                <?php if ($this->sesstion->flashdata('error')): ?>
                     <p style="color:red;"><?= $this->session->flashdata('error'); ?></p>
                     <?php endif; ?>
                 <?= validation_errors('<p style="color:red;">','</p>'); ?>
